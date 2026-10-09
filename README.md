@@ -9,6 +9,7 @@ Each harness gets its own folder under `harnesses/` with a README index, topic d
 | Harness | Coverage | Index |
 |---|---|---|
 | Claude Agent Harness (Claude Desktop + Claude Code) | MCP config, settings hierarchy, hooks, memory, tool search | [harnesses/claude-agent-harness/README.md](harnesses/claude-agent-harness/README.md) |
+| Codex Agent Harness (Codex CLI + ChatGPT desktop app + App Server) | config.toml & requirements.toml, precedence & trust, sandbox/approvals, AGENTS.md, subagents, MCP, lifecycle hooks, app-server JSON-RPC, cross-harness migration | [harnesses/codex-agent-harness/README.md](harnesses/codex-agent-harness/README.md) |
 
 ## Conventions
 
