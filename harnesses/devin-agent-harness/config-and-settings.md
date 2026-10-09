@@ -9,7 +9,7 @@ Verified 2026-10-09 against `cli/reference/configuration/*`, `cli/reference/perm
 | Layer | Location | Notes |
 |---|---|---|
 | User config | `~/.config/devin/config.json` — Windows: `%APPDATA%\devin\config.json` | Personal defaults: model, theme, global permissions, `attribution`, user-only `sandbox` |
-| Project config | `.devin/config.json` | Committed to VCS. **Restricted key set**: only `permissions`, `read_config_from`, `hooks` are valid. |
+| Project config | `.devin/config.json` | Committed to VCS. **Restricted key set**: `permissions`, `read_config_from`, `hooks`, plus repo-level plugin governance lists `requiredPlugins` / `optionalPlugins` / `forbiddenPlugins`. |
 | Project-local overrides | `.devin/config.local.json` | Personal overrides + secrets; auto-excluded via `.git/info/exclude` |
 | MCP servers (user/project/local) | `~/.config/devin/mcp_config.json`, `.devin/mcp_config.json`, `.devin/mcp_config.local.json` | Dedicated files since v3000.3 — see [mcp-and-extensibility.md](mcp-and-extensibility.md) |
 | Machine policy | `system.json` in an admin-writable system directory (MDM-distributed) | Pins enterprise host/account, forces outbound proxy; user cannot override |
@@ -72,7 +72,7 @@ Applied on sign-in; cover Devin CLI **and** Devin Desktop (same store): MCP enab
 
 ## Sandbox
 
-- `--sandbox` activates OS-level filesystem + network containment; **fails closed** — if sandboxing can't be established the CLI refuses to start.
+- `--sandbox` activates OS-level **filesystem** containment (writable roots + Read denies); **fails closed** — if sandboxing can't be established the CLI refuses to start. Network containment is **optional** and only activates when domain filtering is configured (next bullet); with empty domain lists, child-process network access is not restricted.
 - Writable roots derive from granted `Write(...)` scopes + workspace dirs; mid-session grants expand it dynamically.
 - Optional domain filtering (user config `sandbox` section): `allowed_domains` (non-empty = allowlist mode), `denied_domains` (deny wins), `network_mode` `full|limited` (limited = GET/HEAD/OPTIONS only). Domain syntax: `example.com` exact, `*.example.com` subdomains only, `**.example.com` apex + subdomains.
 - Enterprise: allowlists are authoritative (replace local), denylists are additive (merged).

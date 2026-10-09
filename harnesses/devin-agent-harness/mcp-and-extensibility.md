@@ -60,7 +60,7 @@ my-plugin/
 
 ## Custom subagents
 
-- Profiles: `agents/<name>.md` or `agents/<name>/AGENT.md` (project or plugin). Frontmatter controls system prompt, `allowed-tools`, `model`. `devin doctor` validates profiles.
+- Profiles: `.devin/agents/<name>.md` or `.devin/agents/<name>/AGENT.md` at project root (also `.agents/agents/`; global: `~/.config/devin/agents/`). Within a plugin source the unqualified `agents/` layout applies. Frontmatter controls system prompt, `allowed-tools`, `model`. `devin doctor` validates profiles.
 - **Foreground** subagents prompt for tool approvals normally (prompt names the subagent). **Background** subagents inherit already-granted permissions and **auto-deny anything new** — they can't prompt.
 - Skill `subagent: true` uses `subagent_general` (all tools). Tool names matched by hooks/permissions: `read`, `write`, `edit`, `apply_patch`, `notebook_*`, `grep`, `glob`, `exec`, `get_output`, `write_to_process`, `kill_shell`, `webfetch`, `todo_write`, `exit_plan_mode`, `skill`, `run_subagent`, `read_subagent`.
 

@@ -47,7 +47,7 @@ Devin CLI's defining architectural choice: instead of requiring Devin-native con
 | `manual` | Never auto-loaded; activated by `@rule-name` mention |
 | `agent` | Agent-invoked variant |
 
-✅ TRUE — same frontmatter grammar as `.windsurf/rules/*.md` (and Cascade workspace rules use the same four-mode table).
+✅ TRUE — same frontmatter grammar as `.windsurf/rules/*.md`. Devin CLI accepts **five** `trigger` values (`always_on`, `manual`, `model_decision`, `agent`, `glob`); the legacy Cascade workspace-rules table documents only the first four — `agent` is the newer addition.
 
 ## AGENTS.md specifics
 

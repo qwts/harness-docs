@@ -29,7 +29,7 @@
 There is no upstream draft for this harness — these are the errors most often repeated about Devin CLI/Desktop, each verified against official docs:
 
 1. **❌ MCP servers do not live in `config.json` anymore.** Since v3000.3 (Local 3.6) they live in dedicated `mcp_config.json` files at each config location; `mcpServers` keys found in main config files are auto-migrated on startup.
-2. **❌ `.devin/config.json` is not a general project config.** Only `permissions`, `read_config_from`, and `hooks` are valid keys there; model/theme/attribution are user-only (`~/.config/devin/config.json`).
+2. **⚠️ `.devin/config.json` is not a general project config.** Valid keys are `permissions`, `read_config_from`, `hooks`, and the plugin-governance lists `requiredPlugins`/`optionalPlugins`/`forbiddenPlugins`; model/theme/attribution are user-only (`~/.config/devin/config.json`).
 3. **❌ The editor's MCP discovery file is not the agent's MCP file.** Devin Desktop's Cortex-managed agent file is `~/.config/devin/mcp_config.json`; editor discovery uses a separate `~/.codeium/windsurf/mcp_config.json`. They are not interchangeable.
 4. **❌ "Cascade is the Devin Desktop agent" is stale.** Cascade was removed in Devin Desktop v3.9.19 (2026-09-08); Devin Local — the same harness as Devin CLI — is now the only bundled agent.
 5. **❌ Permission precedence is NOT "user beats project".** Order (highest first): org/team settings → session grants → `.devin/config.local.json` → `.devin/config.json` → user config. And a `deny` always beats every `allow`, regardless of specificity.
@@ -44,14 +44,16 @@ There is no upstream draft for this harness — these are the errors most often 
 | Target | Path |
 |---|---|
 | User config (all projects) | `~/.config/devin/config.json` — Windows: `%APPDATA%\devin\config.json` |
-| Project config (committed) | `.devin/config.json` — only `permissions`, `read_config_from`, `hooks` |
+| Project config (committed) | `.devin/config.json` — `permissions`, `read_config_from`, `hooks`, `requiredPlugins`/`optionalPlugins`/`forbiddenPlugins` |
 | Project-local overrides (gitignored) | `.devin/config.local.json` (excluded via `.git/info/exclude`) |
 | MCP servers | `mcp_config.json` beside each config.json: `~/.config/devin/`, `.devin/`, `.devin/mcp_config.local.json` |
 | Global rules | `~/.config/devin/AGENTS.md`, `~/.devin/global_rules.md`, `~/.devin/rules/*.md` |
 | Project rules | `AGENTS.md` (16 KiB auto-include cap), `.devin/rules/*.md`, `.devin/global_rules.md` |
 | Project hooks | `.devin/hooks.v1.json` (recommended), `"hooks"` key in `.devin/config*.json` |
-| Skills | `skills/<name>/SKILL.md` (`.agents` standard); plugin skills invoke as `/<plugin>:<skill>` |
-| Custom subagents | `agents/<name>.md` or `agents/<name>/AGENT.md` (project or plugin) |
+| Skills (project) | `.agents/skills/<name>/SKILL.md` (recommended), `.devin/skills/`, `.windsurf/skills/`, `.claude/skills/`, `.github/skills/`, `.cognition/skills/` |
+| Skills (global) | `~/.config/devin/skills/<name>/SKILL.md` (`%APPDATA%\devin\skills\` on Windows), `~/.agents/skills/`; plugin skills invoke as `/<plugin>:<skill>` |
+| Custom subagents (project) | `.devin/agents/<name>.md` or `.devin/agents/<name>/AGENT.md` (also `.agents/agents/`) |
+| Custom subagents (global) | `~/.config/devin/agents/` (`%APPDATA%\devin\agents\` on Windows) |
 | Machine policy (MDM) | `system.json` in an admin-only system directory — pins auth host and proxy |
 | Team/org policy | Devin app Settings → Enterprise → Devin Desktop / CLI team settings — server-side, highest precedence |
 | Devin Desktop system hooks | `/Library/Application Support/Devin/hooks.json` (macOS), `/etc/devin/hooks.json` (Linux/WSL), `C:\ProgramData\Devin\hooks.json` (Windows); falls back to legacy `Windsurf` paths |
