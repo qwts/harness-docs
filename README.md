@@ -1,0 +1,27 @@
+# harness-docs
+
+Fact-checked reference documentation for AI agent harnesses: configuration schemas, settings precedence, runtime behavior, and audit logs of common misinformation.
+
+Each harness gets its own folder under `harnesses/` with a README index, topic deep-dives, and a corrections log.
+
+## Harnesses
+
+| Harness | Coverage | Index |
+|---|---|---|
+| Claude Agent Harness (Claude Desktop + Claude Code) | MCP config, settings hierarchy, hooks, memory, tool search | [harnesses/claude-agent-harness/README.md](harnesses/claude-agent-harness/README.md) |
+
+## Conventions
+
+- **Verdict legend** used in all docs: ✅ TRUE · ⚠️ PARTIAL · ❌ FALSE · 💬 OPINION · ❓ UNVERIFIED
+- Source drafts are audited claim-by-claim against official documentation; corrections are logged per harness in `corrections.md`.
+- Unconfirmed claims are marked ❓ UNVERIFIED, never silently included.
+
+## Layout
+
+```
+harnesses/
+  <harness>/
+    README.md        # index, verdict legend, top corrections, quick-reference
+    <topic>.md       # verified deep-dives (config, runtime, enterprise controls...)
+    corrections.md   # full audit log of source-draft errors
+```
