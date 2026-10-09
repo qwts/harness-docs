@@ -21,7 +21,7 @@
 
 Two ways, merge into one namespace:
 
-- **JSON**: `agent.<name>` in opencode.json — `{ description (required), mode: "primary"|"subagent", model, temperature, prompt: "{file:...}", steps, disable, permission, tools (deprecated) }`
+- **JSON**: `agent.<name>` in opencode.json — `{ description (optional), mode: "primary"|"subagent"|"all" (default `"all"` when omitted), model, temperature, prompt: "{file:...}", steps, disable, permission, tools (deprecated) }`
 - **Markdown**: frontmatter + body = prompt. `.opencode/agents/review.md` → `@review`; global `~/.config/opencode/agents/`.
 - **✅** Subagents inherit the invoking agent's model unless `model` set; primary agents use global `model`.
 - **✅** `steps` caps agentic iterations (legacy `maxSteps` deprecated).

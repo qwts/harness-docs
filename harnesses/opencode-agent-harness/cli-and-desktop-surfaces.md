@@ -3,7 +3,7 @@
 ## Install
 
 - **✅** Canonical: `curl -fsSL https://opencode.ai/install | bash`. Also npm/bun/pnpm, Homebrew (`opencode`), and GitHub releases. Repo: `github.com/anomalyco/opencode` (MIT; formerly `opencode-ai`).
-- TUI config: `~/.config/opencode/tui.json` (+ project `tui.json`); everything else shares opencode.json.
+- TUI config: `~/.config/opencode/tui.json` (+ project `tui.json`); the CLI/TUI and server surfaces share opencode.json — Desktop's config surface is unverified (see below).
 
 ## Surfaces
 
@@ -13,7 +13,7 @@
 | `opencode run` | Headless one-shot mode (`opencode run "task"`, `--auto` for auto-approve) |
 | `opencode serve` | API server (`server.port` config); the same harness exposed over HTTP |
 | `opencode mcp *` | MCP management/auth subcommands |
-| Desktop app (BETA) | `opencode-desktop-*` builds: macOS arm64/x64 dmg, Windows x64 exe, Linux deb/rpm/AppImage; `brew install --cask opencode-desktop`, scoop `extras/opencode-desktop` |
+| Desktop app (BETA) | `opencode-desktop-*` builds: macOS arm64/x64 dmg, Windows x64 exe, Linux deb/rpm/AppImage; `brew install --cask opencode-desktop`, scoop `extras/opencode-desktop` — ⚠️ config parity with the TUI not established |
 | Web/IDE | opencode.ai also ships a web app + IDE extension per intro docs ❓ (details not deep-verified) |
 
 ## TUI essentials

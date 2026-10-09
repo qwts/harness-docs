@@ -1,6 +1,6 @@
 # OpenCode Agent Harness (OpenCode TUI + OpenCode Desktop + server)
 
-> Verified 2026-10-09 against [opencode.ai/docs](https://opencode.ai/docs/) and the [anomalyco/opencode](https://github.com/anomalyco/opencode) repo. This entry covers the OpenCode agent harness across its surfaces: the terminal TUI (`opencode`), the desktop app (beta), the headless/`opencode serve` API surface, and the config/plugin machinery shared by all of them.
+> Verified 2026-10-09 against [opencode.ai/docs](https://opencode.ai/docs/) and the [anomalyco/opencode](https://github.com/anomalyco/opencode) repo. This entry covers the OpenCode agent harness across its surfaces: the terminal TUI (`opencode`), the desktop app (beta), and the headless/`opencode serve` API surface. The config/plugin machinery below is documented for the CLI/TUI/server surfaces; Desktop parity is not yet established (see cli-and-desktop-surfaces.md).
 
 **Status**: complete, verified. **Provenance**: written directly against official docs — there was no source draft, so `corrections.md` is a common-misinformation audit rather than a diff log.
 
@@ -50,7 +50,7 @@
 | Agents | `.opencode/agents/*.md`, `~/.config/opencode/agents/` |
 | Commands | `.opencode/commands/*.md`, `~/.config/opencode/commands/` |
 | Plugins | `.opencode/plugins/*.ts|js`, `~/.config/opencode/plugins/`, npm via `plugin: []` |
-| Skills | `.opencode/skills/`, `~/.config/opencode/skills/`, `~/.claude/skills/` (compat) |
+| Skills | `.opencode/skills/`, `~/.config/opencode/skills/`, `.claude/skills/` + `~/.claude/skills/` (compat), `.agents/skills/` + `~/.agents/skills/` |
 | Rules | `AGENTS.md`, `CLAUDE.md` fallback, `~/.config/opencode/AGENTS.md`, `instructions: []` key |
 | Credentials | `~/.local/share/opencode/auth.json`; MCP OAuth tokens `~/.local/share/opencode/mcp-auth.json` |
 | Env overrides | `OPENCODE_CONFIG`, `OPENCODE_CONFIG_DIR`, `OPENCODE_CONFIG_CONTENT`, `OPENCODE_DISABLE_CLAUDE_CODE*` |

@@ -5,7 +5,7 @@
 - **✅** Markdown files in `.opencode/commands/` or `~/.config/opencode/commands/`; filename → `/name`. Also via `command.<name>` in opencode.json (`template` required).
 - Options: `description`, `agent` (subagent triggers subtask by default), `subtask` bool, `model`.
 - **✅** Template syntax: `$ARGUMENTS`, positional `$1`/`$2`/…, `!\`cmd\`` injects shell output (runs at project root), `@file` includes file content.
-- Built-ins: `/init`, `/undo`, `/redo`, `/share`, `/help`, `/connect`, `/models`.
+- Built-ins (representative subset, not exhaustive): `/init`, `/undo`, `/redo`, `/share`, `/help`, `/connect`, `/models` — the current TUI adds `/compact`, `/details`, `/editor`, `/exit`, `/export`, `/new`, `/sessions`, `/themes`, `/thinking`, `/unshare` and aliases.
 
 ## Rules / instruction imports
 
@@ -68,5 +68,5 @@ All hooks run in sequence; same-name+version npm dupes load once.
 
 ## Skills
 
-- **✅** Skill dirs: `.opencode/skills/` (project), `~/.config/opencode/skills/` (global), `~/.claude/skills/` (compat fallback, disable via `OPENCODE_DISABLE_CLAUDE_CODE_SKILLS`).
+- **✅** Skill dirs: `.opencode/skills/` (project), `~/.config/opencode/skills/` (global), `.claude/skills/` + `~/.claude/skills/` (compat fallback — `~/.claude/skills/` disable-able via `OPENCODE_DISABLE_CLAUDE_CODE_SKILLS`), `.agents/skills/` + `~/.agents/skills/`.
 - **✅** Loading a skill is permission-gated by the `skill` permission key.
