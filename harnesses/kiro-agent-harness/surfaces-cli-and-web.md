@@ -1,8 +1,8 @@
-# Surfaces: IDE, CLI, Web, Mobile, Crew
+# Surfaces: IDE, CLI, Web, Mobile (+ Crew orchestrator)
 
-## One harness, five front ends
+## One harness, four front ends
 
-- **✅** Every surface is a front end to the same unified agent harness; `.kiro/` project config is the shared layer, with surface-specific behavior only for permissions and primary-agent selection. Specs can start in the IDE, continue in CLI, hand off to Web.
+- **✅** Kiro's unified-harness documentation names four front ends to the same agent runtime — **IDE, CLI, Web, Mobile** — sharing `.kiro/` project config, with surface-specific behavior only for permissions and primary-agent selection. Specs can start in the IDE, continue in CLI, hand off to Web.
 
 | Surface | What it is |
 |---|---|
@@ -10,7 +10,11 @@
 | CLI (`kiro-cli`) | Terminal-native agent: headless mode, session management, CI integration; V3 current |
 | Web | Browser agent for multi-repo tasks — plans, implements, opens PRs; zero-setup sandboxed sessions |
 | Mobile | Monitor tasks, review PRs, chat |
-| Crew | Personal agent: autonomous tasks, scheduling, memory, multi-channel access |
+
+## Crew — separate orchestrator (not a harness front end)
+
+- **✅** Crew is a personal-agent orchestration layer (autonomous tasks, scheduling, memory, multi-channel access) with its own gateway/configuration. It is **not** a front end to the unified Kiro harness: Crew 0.6 release notes show it selects among agent harness backends — `kiro-cli` (first-class), plus adapted Claude Code, Codex, OpenCode, KAS, Pi, and goose.
+- **⚠️** Do not assume `.kiro/` config or the capability matrix below applies inside Crew-driven sessions.
 
 ## Capability matrix (from official docs)
 
@@ -22,6 +26,7 @@
 | AGENTS.md | ✓ | ✓ | ✓ | ✓ |
 | MCP local + remote | ✓ | ✓ | ✓ | — |
 | Hooks | ✓ | ✓ | ✓ | — |
+| `.kiroignore` | ✓ | ✓ (V3) | — | — |
 
 ## kiro-cli notes
 

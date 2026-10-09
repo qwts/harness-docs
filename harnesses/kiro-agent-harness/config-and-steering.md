@@ -42,6 +42,6 @@ YAML frontmatter at the very top of a steering file (must be first content):
 
 ## Other config-adjacent files
 
-- **Kiroignore** — keeps secrets/sensitive paths out of agent context (feature-level; exact filename/format ❓ beyond the capability listing).
+- **Kiroignore** — keeps secrets/sensitive paths out of agent context; enforced on **IDE + CLI V3 only**, unavailable on Web/Mobile (capability listing; exact filename/format ❓).
 - **Configuration Sync** — opt-in upload of local steering/config to cloud configuration for Web sessions.
 - **Compaction** — built-in context management for long sessions (not user-configured).

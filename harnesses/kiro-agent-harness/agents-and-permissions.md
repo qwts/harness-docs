@@ -2,7 +2,7 @@
 
 ## Custom agents
 
-- **✅** Kiro supports custom agents defined by JSON config files (agent config). Documented fields from official docs:
+- **✅** Custom agents live at `.kiro/agents/<name>.json` **or** `.kiro/agents/<name>.md` — equivalent JSON and Markdown formats per the custom-agent docs. Documented fields:
 
 ```json
 {
@@ -29,9 +29,9 @@
 
 ## Permissions
 
-- **✅** Permissions are a first-class feature ("control what the agent can access") and surface-specific in behavior. The hooks system can gate tool calls: a `PreToolUse` hook can block or modify tool execution based on the tool name matched via regex `matcher`.
+- **✅** Permissions are a first-class feature ("control what the agent can access") and surface-specific in behavior. Hooks gate tool calls via `PreToolUse`: a command hook can **block** the invocation (exit code 2 blocks intentionally; other non-zero exits are hook failures, not blocks) and a successful command's **stdout is added to agent context** — it cannot modify the pending tool call's arguments. Matcher is a regex on the tool name.
 - **✅** `Stop`-trigger command hooks can require confirmation via a `confirm` block (static `question` + `options[{id,label,run}]`, or dynamic via `confirmCommand` stdout JSON).
-- **✅** `.kiroignore` controls file visibility to the agent — the data-access permission layer.
+- **⚠️** `.kiroignore` controls file visibility to the agent — but only on **IDE and CLI V3**; it is not enforced on Web/Mobile, so don't treat it as a secrets boundary in cloud sessions.
 - ❓ Granular per-tool permission configuration (allow/deny lists per surface) is referenced in docs navigation but was not fully verified for this entry.
 
 ## Modes / workflow surfaces

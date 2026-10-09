@@ -6,7 +6,7 @@ No upstream draft existed for this harness; this file audits claims commonly rep
 
 | ID | Claim | Reality |
 |---|---|---|
-| F1 | "Kiro is a VS Code extension / just the IDE." | Kiro is a unified agent harness with five surfaces (IDE, CLI, Web, Mobile, Crew); the IDE is a Code OSS desktop app, not an extension, and `.kiro/` config is shared by all surfaces. |
+| F1 | "Kiro is a VS Code extension / just the IDE" — or its inverse "every Kiro product shares the harness." | Four surfaces share the harness: IDE, CLI, Web, Mobile. The IDE is a Code OSS desktop app, not an extension. **Crew is a separate orchestrator** that selects agent backends (`kiro-cli`, Claude Code, Codex, OpenCode, KAS, Pi, goose) — it is not a fifth front end, and `.kiro/` config is shared only by the four. |
 | F2 | "Kiro hooks are defined in agent config / chat settings." | Pre-1.0/3.0 formats were embedded; current format is standalone `.kiro/hooks/*.json` files with PascalCase triggers. `kiro-cli agent migrate` converts CLI 2.x. |
 | F3 | "MCP servers go in one global mcp.json." | Three scopes: workspace MCP config, user MCP config, and per-agent `mcpServers` (independent unless `includeMcpJson: true`). |
 | F4 | "`kiro://` install links add MCP servers silently." | They open a confirmation dialog showing command + env/header names (values hidden); nothing is written until you confirm. |
