@@ -37,7 +37,7 @@ Loaded in this order (later overrides earlier):
 | Key | Type | Notes |
 |---|---|---|
 | `model` | `provider/model-id` string | e.g. `anthropic/claude-sonnet-4-5`, `opencode/gpt-5.1-codex` for Zen |
-| `autoupdate` | bool | |
+| `autoupdate` | bool or `"notify"` | `"notify"` checks without installing (non-pkg-manager installs) |
 | `server.port` | number | API server port (`opencode serve`) |
 | `permission` | string/object | see agents-and-permissions.md |
 | `tools` | object | ⚠️ deprecated since v1.1.1 → merged into `permission` |
@@ -47,7 +47,7 @@ Loaded in this order (later overrides earlier):
 | `provider` | object | per-provider options: `options.baseURL`, `blacklist`, `whitelist` |
 | `plugin` | array of npm names | auto-installed via Bun into `~/.cache/opencode/node_modules/` |
 | `instructions` | array | extra rule files (globs ok, URLs fetched w/ 5s timeout), combined with AGENTS.md |
-| `theme`, `keybinds` | object | TUI appearance |
+| ⚠️ `theme`, `keybinds` | legacy | deprecated here — live in `tui.json` (`theme` is a string there) |
 
 ## Env vars
 

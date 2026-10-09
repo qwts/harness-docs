@@ -10,7 +10,7 @@ No upstream draft existed for this harness; this file audits claims commonly rep
 | F2 | "Put config in `.opencode/config.json`." | Project config is `opencode.json` at repo root. `.opencode/` is a directory of subdirs (`agents/`, `commands/`, `plugins/`, `skills/`). |
 | F3 | "opencode is a fork/rebrand of Claude Code or Windsurf." | Independent SST/anomalyco project (MIT). `.claude` files are only optional compat fallbacks, disable-able via `OPENCODE_DISABLE_CLAUDE_CODE*`. |
 | F4 | "MCP OAuth needs a client ID/secret configured up front." | Auto-detects 401 → OAuth flow with Dynamic Client Registration (RFC 7591); preregistration is optional. `oauth: false` disables it. |
-| F5 | "Deny rules can be overridden by more specific allow rules." | The opposite is safe to assume: last matching pattern wins, and docs pattern is `"*"` first — deny is enforced even under `--auto`. |
+| F5 | "Deny rules are permanently safe once written." | Granular rules resolve by **last matching pattern wins regardless of effect** — a later `allow` overrides an earlier `deny`. `--auto` only preserves a deny when it is the final resolution, so place deny rules last. |
 
 ## PARTIAL
 

@@ -69,4 +69,4 @@ Defined under `mcp.<name>`; tools appear alongside built-ins (docs warn MCP tool
 
 - **✅** MCP tools register as `<server>_<tool>`; gate via global `tools` map or per-agent `tools`/`permission` with globs (`"my-mcp*": false`).
 - Pattern for per-agent-only MCP: disable globally in `tools`, re-enable inside `agent.<name>.tools`.
-- Remote-config org MCPs (from `.well-known/opencode`) arrive `enabled: false`; opt in locally with `enabled: true`.
+- Remote-config org MCPs (from `.well-known/opencode`) load as supplied; orgs *may* ship them `enabled: false` for opt-in — it is not forced.
