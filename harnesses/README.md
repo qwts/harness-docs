@@ -3,7 +3,7 @@
 **Registry verified:** 2026-10-29  
 **Source:** [`qwts/qwts-agent-org/governance/agents.json`](https://github.com/qwts/qwts-agent-org/blob/main/governance/agents.json)  
 **Registry file SHA at verification:** `ae7d425b8fc5a1580ff28af50c038c69a51abdd6`  
-**Coverage:** 29 active unique harnesses · 9 documented · 20 pending
+**Coverage:** 29 active unique harnesses · 10 documented · 19 pending
 
 ## Method
 
@@ -21,7 +21,7 @@
 | `amp` | Amp | Pending | — |
 | `antigravity` | Google Antigravity | **Documented** | [Index](antigravity-agent-harness/README.md) |
 | `claude-code` | Claude Code | **Documented** | [Index](claude-agent-harness/README.md) |
-| `cline` | Cline | Pending | — |
+| `cline` | Cline | **Documented** | [Index](cline-agent-harness/README.md) |
 | `codex` | OpenAI Codex | **Documented** | [Index](codex-agent-harness/README.md) |
 | `command-code` | Command Code | Pending | — |
 | `copilot` | GitHub Copilot | **Documented** | [Index](copilot-agent-harness/README.md) |
