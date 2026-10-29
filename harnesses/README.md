@@ -3,7 +3,7 @@
 **Registry verified:** 2026-10-29  
 **Source:** [`qwts/qwts-agent-org/governance/agents.json`](https://github.com/qwts/qwts-agent-org/blob/main/governance/agents.json)  
 **Registry file SHA at verification:** `ae7d425b8fc5a1580ff28af50c038c69a51abdd6`  
-**Coverage:** 29 active unique harnesses · 11 documented · 18 pending
+**Coverage:** 29 active unique harnesses · 12 documented · 17 pending
 
 ## Method
 
@@ -28,7 +28,7 @@
 | `cursor` | Cursor | **Documented** | [Index](cursor-agent-harness/README.md) |
 | `deepseek` | DeepSeek | **Documented** | [Index](deepseek-agent-harness/README.md) |
 | `devin` | Devin | **Documented** | [Index](devin-agent-harness/README.md) |
-| `factory-droid` | Factory Droid | Pending | — |
+| `factory-droid` | Factory Droid | **Documented** | [Index](factory-droid-agent-harness/README.md) |
 | `goose` | Goose | Pending | — |
 | `grok` | Grok | Pending | — |
 | `hermes` | Hermes | Pending | — |
