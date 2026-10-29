@@ -3,7 +3,7 @@
 **Registry verified:** 2026-10-29  
 **Source:** [`qwts/qwts-agent-org/governance/agents.json`](https://github.com/qwts/qwts-agent-org/blob/main/governance/agents.json)  
 **Registry file SHA at verification:** `ae7d425b8fc5a1580ff28af50c038c69a51abdd6`  
-**Coverage:** 29 active unique harnesses · 10 documented · 19 pending
+**Coverage:** 29 active unique harnesses · 11 documented · 18 pending
 
 ## Method
 
@@ -26,7 +26,7 @@
 | `command-code` | Command Code | Pending | — |
 | `copilot` | GitHub Copilot | **Documented** | [Index](copilot-agent-harness/README.md) |
 | `cursor` | Cursor | **Documented** | [Index](cursor-agent-harness/README.md) |
-| `deepseek` | DeepSeek | Pending | — |
+| `deepseek` | DeepSeek | **Documented** | [Index](deepseek-agent-harness/README.md) |
 | `devin` | Devin | **Documented** | [Index](devin-agent-harness/README.md) |
 | `factory-droid` | Factory Droid | Pending | — |
 | `goose` | Goose | Pending | — |
