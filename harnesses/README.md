@@ -18,7 +18,7 @@
 | Registry harness | Product or project | Status | Documentation |
 |---|---|---|---|
 | `aider` | Aider | Pending | — |
-| `amp` | Amp | Pending | — |
+| `amp` | Amp | **Documented** | [Index](amp-agent-harness/README.md) |
 | `antigravity` | Google Antigravity | **Documented** | [Index](antigravity-agent-harness/README.md) |
 | `claude-code` | Claude Code | **Documented** | [Index](claude-agent-harness/README.md) |
 | `cline` | Cline | **Documented** | [Index](cline-agent-harness/README.md) |
