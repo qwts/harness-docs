@@ -53,7 +53,7 @@ Hermes Agent is Nous Research’s terminal-native autonomous agent — the overv
 | YOLO | `--yolo` / `/yolo` / `HERMES_YOLO_MODE`; hardline blocklist floor; deny globs evaluated first |
 | Hooks | Gateway (`HOOK.yaml`, trusted-by-placement), plugin (`ctx.register_hook`), shell (`hooks:` block, consented, exit-2 block, fail-open default), outbound webhooks (signed) |
 | MCP | `mcp_servers` in config.yaml; `mcp_<server>_<tool>` naming; OAuth incl. device flow; lazy start; `/reload-mcp`; `hermes mcp serve` as a server |
-| Terminal | local/docker/ssh/modal/daytona/vercel_sandbox (+singularity/sprites plugins); hardened containers; persistent docker VM |
+| Terminal | local/docker/ssh/modal/daytona/vercel_sandbox (+singularity/sprites plugins); hardened containers (`--cap-drop ALL` with `DAC_OVERRIDE`/`CHOWN`/`FOWNER` re-added); persistent docker VM |
 | Cron | Gateway tick 60 s; jobs.json; pin → `cron.model` → main; no-agent scripts; `wakeAgent` gate; `context_from`/`continuity`; `[SILENT]`/`[CRON_FAILURE]` |
 | Automation | `/goal` (judge, 20-turn budget), `/heartbeat` (≥60 s), `/loop`, `/bg`, delegate_task, kanban board |
 | CLI | Gateway client over WebSocket; frozen session flags; `Esc Esc` backtrack; `!` shell mode; `/busy` modes; exit 3 on queued-owner loss |

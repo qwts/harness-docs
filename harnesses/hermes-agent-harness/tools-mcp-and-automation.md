@@ -16,7 +16,7 @@ Built-in tools are grouped into toolsets enabled per platform: `web`, `search`, 
 | `modal`, `daytona`, `vercel_sandbox` | Cloud execution (Vercel needs all three of `VERCEL_TOKEN`/`VERCEL_PROJECT_ID`/`VERCEL_TEAM_ID`) |
 | `singularity`, `sprites` | Plugins (HPC containers; stateful Fly.io sandboxes) |
 
-All container backends drop capabilities, set pids-limit 256, and use namespace isolation. Background work uses the `process` tool (`list`/`poll`/`wait`/`log`/`kill`/`write`); a trailing `&` command auto-backgrounds with an `auto_backgrounded` note; repeated waits on a quiet process flip on `notify_on_complete`; completed receipts persist 64 results for 7 days under `logs/process-results/`.
+All container backends run `--cap-drop ALL` and then re-add `DAC_OVERRIDE`, `CHOWN`, and `FOWNER` in the same base flags (bind-mount writes and package-manager file ownership), alongside `no-new-privileges`, pids-limit 256, and namespace isolation. Background work uses the `process` tool (`list`/`poll`/`wait`/`log`/`kill`/`write`); a trailing `&` command auto-backgrounds with an `auto_backgrounded` note; repeated waits on a quiet process flip on `notify_on_complete`; completed receipts persist 64 results for 7 days under `logs/process-results/`.
 
 ## MCP
 
