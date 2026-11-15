@@ -24,7 +24,7 @@
 | MCP tools are namespaced `mcp__server__tool`. | ❌ FALSE | Their tools are “namespaced as `<server>__<tool>`.” |
 | Vendor MCP configs (`~/.claude.json`, `.cursor/mcp.json`, `.mcp.json`) take precedence over `config.toml`. | ❌ FALSE | They are “merged below `config.toml` in priority”; disable per vendor with `[compat.claude] mcps = false` / `[compat.cursor] mcps = false`. |
 | A skill’s `allowed-tools` frontmatter restricts which tools it can run. | ❌ FALSE | “`allowed-tools` — Does not grant or restrict tools.” |
-| `user-invocable: yes` hides a skill from slash commands. | ❌ FALSE | “Only the literal `true` counts; `yes` is false” — so `yes` behaves like the default `true`. |
+| `user-invocable: yes` hides a skill from slash commands. | ✅ TRUE | “Only the literal `true` counts; `yes` is false,” and `false` “hides it from you and from the model” — an explicit `yes` therefore hides the skill. Omitting the field is what yields the default `true`; the footgun is writing `yes` intending to expose it. |
 | Grok reads only `AGENTS.md`. | ❌ FALSE | It reads “any of `AGENTS.md`, `Agents.md`, `AGENT.md`, `CLAUDE.md`, `Claude.md`, and `CLAUDE.local.md`, plus every `*.md` file in a `.grok/rules/` directory,” with `.claude/rules/` and `.cursor/rules/` for compatibility. |
 | Rewind only changes the conversation. | ❌ FALSE | “Rewind modifies files on disk — reverted changes are lost unless committed to git.” |
 | Headless runs leave no session on disk. | ❌ FALSE | “Sessions work the same in the TUI, headless mode, and over ACP,” under `~/.grok/sessions/` keyed by working directory. |
