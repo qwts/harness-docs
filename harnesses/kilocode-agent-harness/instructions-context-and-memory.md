@@ -13,7 +13,7 @@
 - **Compatibility files:** project roots may carry `AGENTS.md` (primary), `CLAUDE.md` (“also supported for compatibility”), and `CONTEXT.md` (“additional project context”).
 - **Legacy:** the old memory-bank feature is deprecated in favor of AGENTS.md; “Existing memory bank rules will continue to work.”
 
-Instruction priority (new platform): agent prompt (`agent.<name>.prompt`) → project `instructions` key → project-root `AGENTS.md` → global `instructions` key → global fallbacks. Skills (`.kilo/skills/`, config `skills` key) are “loaded on demand.” The `instructions` config key takes file paths and glob patterns (e.g. `"[".kilo/rules/formatting.md", ".kilo/rules/*.md"]`); URL entries are fetched with a 5-second timeout and silently skipped on failure. `KILO_DISABLE_EXTERNAL_SKILLS=true` disables external skill directories (`.claude/skills/`, `.agents/skills/`).
+Instruction priority (new platform): agent prompt (`agent.<name>.prompt`) → project `instructions` key → project-root `AGENTS.md` → global `instructions` key → global fallbacks. Skills (`.kilo/skills/`, config `skills` key) are “loaded on demand.” The `instructions` config key takes file paths and glob patterns (e.g. `[".kilo/rules/formatting.md", ".kilo/rules/*.md"]`); URL entries are fetched with a 5-second timeout and silently skipped on failure. `KILO_DISABLE_EXTERNAL_SKILLS=true` disables external skill directories (`.claude/skills/`, `.agents/skills/`).
 
 ## Custom rules
 
