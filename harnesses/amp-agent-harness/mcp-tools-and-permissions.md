@@ -10,9 +10,11 @@
 
 ## MCP configuration
 
-Servers are configured under `amp.mcpServers` in user (`~/.config/amp/settings.json`) or workspace (`.amp/settings.json`) settings, with stdio entries (`command`, `args`, `env`) and remote entries (`url`, `headers`). `${VAR_NAME}` interpolation works in config values, and `${amp:id-token}` may appear in remote-server headers in orbs (HTTPS servers without OAuth only; rejected in URLs and local-server fields). The CLI manages servers with `amp mcp add <name> -- <command>` or `amp mcp add <name> <url>`; remote definitions are stored by ampcode.com and scoped with `--personal`, `--workspace`, `--project`, or `--current-project`.
+Servers are configured under `amp.mcpServers` in user (`~/.config/amp/settings.json`) or workspace (`.amp/settings.json`) settings, with stdio entries (`command`, `args`, `env`) and remote entries (`url`, `headers`). `${VAR_NAME}` interpolation works in config values, and `${amp:id-token}` may appear in remote-server headers in orbs (HTTPS servers without OAuth only; rejected in URLs and local-server fields). Local registration uses `amp mcp add <name> -- <command>` or `amp mcp add <name> <url>` — “a URL entry is still local configuration, even when the URL points to another machine.”
 
-Loading precedence, highest first: CLI `--mcp-config`, then workspace settings, then user settings, then skills — “you can override skill-provided MCP servers with your own configuration.” Servers with the same ID override each other (project over workspace, workspace over personal); disabled servers do not override.
+Hosted remote definitions are a separate mechanism: “Remote MCP definitions are stored by ampcode.com,” managed in MCP server settings or with `amp mcp remote` (for example `amp mcp remote --personal add Linear https://mcp.linear.app/mcp`). “Every `amp mcp remote` command needs one scope option” — `--personal`, `--workspace <workspace>`, `--project <project>`, or `--current-project`.
+
+Loading precedence for local configuration, highest first: CLI `--mcp-config`, then workspace settings, then user settings, then skills — “you can override skill-provided MCP servers with your own configuration.” For hosted remote definitions, IDs must be unique per scope, and project servers override workspace servers with the same ID, workspace servers override personal ones; disabled servers do not override.
 
 ## MCP trust and policies
 

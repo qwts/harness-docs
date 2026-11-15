@@ -39,10 +39,11 @@ Amp is a coding agent and development environment: one agent and one set of thre
 |---|---|
 | User settings | `~/.config/amp/settings.json` (or `.jsonc`); Windows `%USERPROFILE%\.config\amp\settings.json` |
 | Workspace settings | Nearest `.amp/settings.json` / `.jsonc`, searched upward from cwd to repo root |
-| Managed settings | `/Library/Application Support/ampcode/managed-settings.json` (macOS), `/etc/ampcode/managed-settings.json` (Linux), `%ProgramData%\ampcode\managed-settings.json` (Windows) |
-| Settings precedence | Workspace overrides user; keymap entries reverse that; managed settings merge over workspace (scalars: workspace wins; lists: combined workspace-first; objects merged) |
+| Managed settings (workspace policy) | One JSON document admins add in Workspace Settings → Managed Settings (cloud-hosted, revision-tracked) |
+| Managed settings (machine-level) | `/Library/Application Support/ampcode/managed-settings.json` (macOS), `/etc/ampcode/managed-settings.json` (Linux), `%ProgramData%\ampcode\managed-settings.json` (Windows) |
+| Settings precedence | Workspace settings (`.amp/`) override user settings; keymap entries reverse that. The admin policy document beats local settings on scalars, merges lists workspace-first and objects key-by-key; the machine-level file merges the same way and takes precedence over the policy document |
 | Key namespace | All settings use the `amp.` prefix |
-| Blocked workspace keys | `amp.url`, `amp.proxy`, `amp.mcpServers`, `amp.workspaces`, `amp.mcpTrustedServers` |
+| Keys blocked in the policy document | `amp.url`, `amp.proxy`, `amp.mcpServers`, `amp.workspaces`, `amp.mcpTrustedServers` — this restriction does not apply to repo `.amp/settings.json`, which can set `amp.mcpServers` |
 | MCP config key | `amp.mcpServers` (stdio: `command`/`args`/`env`; remote: `url`/`headers`) |
 | MCP loading order | CLI `--mcp-config` → workspace → user → skills |
 | Default tool approval | None — Amp runs tools without asking |

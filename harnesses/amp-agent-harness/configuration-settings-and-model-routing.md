@@ -9,11 +9,12 @@
 | User settings | `~/.config/amp/settings.json` or `.jsonc` (macOS/Linux); `%USERPROFILE%\.config\amp\settings.json` (Windows) |
 | Workspace settings | The nearest `.amp/settings.json` or `.jsonc`, searched upward from the current directory to the repository root |
 | Custom user settings | Any path passed with `--settings-file` |
-| Managed settings | `/Library/Application Support/ampcode/managed-settings.json` (macOS), `/etc/ampcode/managed-settings.json` (Linux), `%ProgramData%\ampcode\managed-settings.json` (Windows) |
+| Workspace policy document | One JSON document in Workspace Settings → Managed Settings (cloud-hosted; each save is a revision) |
+| Managed settings (machine-level) | `/Library/Application Support/ampcode/managed-settings.json` (macOS), `/etc/ampcode/managed-settings.json` (Linux), `%ProgramData%\ampcode\managed-settings.json` (Windows) |
 
 `amp config edit` opens the user settings (`--workspace` for workspace settings), and `"$schema": "https://ampcode.com/cli-settings.schema.json"` enables validation. When the same setting appears in multiple places, workspace settings override user settings — with one documented reversal: keymap entries in user settings override workspace entries. Every key is namespaced under the `amp.` prefix.
 
-Managed settings merge on top: scalar settings are won by the workspace document, lists are combined with workspace entries first, and objects are merged key by key with workspace values winning conflicts. A local `managed-settings.json` merges the same way and takes precedence over the workspace document. The workspace document cannot set `amp.url`, `amp.proxy`, `amp.mcpServers`, `amp.workspaces`, or `amp.mcpTrustedServers`.
+Two managed layers sit above those files. Administrators add one JSON policy document in Workspace Settings → Managed Settings — each save creates a revision recording the author and time. When the workspace policy document and local settings set the same scalar, the workspace value wins; lists are combined with workspace entries first, and objects merge key by key with workspace values winning conflicts. A machine-level `managed-settings.json` merges in the same way and takes precedence over the workspace policy document. The blocked keys — `amp.url`, `amp.proxy`, `amp.mcpServers`, `amp.workspaces`, `amp.mcpTrustedServers` — apply to the admin policy document only: repository `.amp/settings.json` can set `amp.mcpServers` (subject to the MCP approval flow), and `amp.mcpServers` at the policy layer is replaced by the server MCP registry and hosted MCP servers instead.
 
 ## Notable settings keys
 
