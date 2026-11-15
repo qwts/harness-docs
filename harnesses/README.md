@@ -32,7 +32,7 @@
 | `goose` | Goose | **Documented** | [Index](goose-agent-harness/README.md) |
 | `grok` | Grok | **Documented** | [Index](grok-agent-harness/README.md) |
 | `hermes` | Hermes | **Documented** | [Index](hermes-agent-harness/README.md) |
-| `junie` | Junie | Pending | — |
+| `junie` | Junie | **Documented** | [Index](junie-agent-harness/README.md) |
 | `kilocode` | Kilo Code | Pending | — |
 | `kimicode` | Kimi Code | Pending | — |
 | `kiro` | Kiro | **Documented** | [Index](kiro-agent-harness/README.md) |
