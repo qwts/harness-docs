@@ -1,9 +1,9 @@
 # Active harness coverage
 
-**Registry verified:** 2026-10-29  
+**Registry verified:** 2026-11-15  
 **Source:** [`qwts/qwts-agent-org/governance/agents.json`](https://github.com/qwts/qwts-agent-org/blob/main/governance/agents.json)  
-**Registry file SHA at verification:** `ae7d425b8fc5a1580ff28af50c038c69a51abdd6`  
-**Coverage:** 29 active unique harnesses · 13 documented · 16 pending
+**Registry file SHA at verification:** `5c6de133c489f103e1dc9aa1cd280ca6de6de537`  
+**Coverage:** 29 active unique harnesses · 14 documented · 15 pending
 
 ## Method
 
@@ -17,7 +17,7 @@
 
 | Registry harness | Product or project | Status | Documentation |
 |---|---|---|---|
-| `aider` | Aider | Pending | — |
+| `aider` | Aider | **Documented** | [Index](aider-agent-harness/README.md) |
 | `amp` | Amp | **Documented** | [Index](amp-agent-harness/README.md) |
 | `antigravity` | Google Antigravity | **Documented** | [Index](antigravity-agent-harness/README.md) |
 | `claude-code` | Claude Code | **Documented** | [Index](claude-agent-harness/README.md) |
