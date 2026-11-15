@@ -31,7 +31,7 @@
 | `factory-droid` | Factory Droid | **Documented** | [Index](factory-droid-agent-harness/README.md) |
 | `goose` | Goose | **Documented** | [Index](goose-agent-harness/README.md) |
 | `grok` | Grok | **Documented** | [Index](grok-agent-harness/README.md) |
-| `hermes` | Hermes | Pending | — |
+| `hermes` | Hermes | **Documented** | [Index](hermes-agent-harness/README.md) |
 | `junie` | Junie | Pending | — |
 | `kilocode` | Kilo Code | Pending | — |
 | `kimicode` | Kimi Code | Pending | — |
