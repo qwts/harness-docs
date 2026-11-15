@@ -34,7 +34,7 @@
 | `hermes` | Hermes | **Documented** | [Index](hermes-agent-harness/README.md) |
 | `junie` | Junie | **Documented** | [Index](junie-agent-harness/README.md) |
 | `kilocode` | Kilo Code | **Documented** | [Index](kilocode-agent-harness/README.md) |
-| `kimicode` | Kimi Code | Pending | — |
+| `kimicode` | Kimi Code | **Documented** | [Index](kimicode-agent-harness/README.md) |
 | `kiro` | Kiro | **Documented** | [Index](kiro-agent-harness/README.md) |
 | `mcode` | MCode | Pending | — |
 | `mirror` | Mirror | Pending | — |
