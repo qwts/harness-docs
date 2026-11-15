@@ -31,7 +31,7 @@
 | `factory-droid` | Factory Droid | **Documented** | [Index](factory-droid-agent-harness/README.md) |
 | `goose` | Goose | **Documented** | [Index](goose-agent-harness/README.md) |
 | `grok` | Grok | **Documented** | [Index](grok-agent-harness/README.md) |
-| `hermes` | Hermes | Pending | — |
+| `hermes` | Hermes | **Documented** | [Index](hermes-agent-harness/README.md) |
 | `junie` | Junie | Pending | — |
 | `kilocode` | Kilo Code | Pending | — |
 | `kimicode` | Kimi Code | Pending | — |
@@ -43,10 +43,14 @@
 | `pi` | Pi | Pending | — |
 | `qwen-code` | Qwen Code | Pending | — |
 | `roocode` | Roo Code | Pending | — |
+| `trueline-zcode` | ZCode | Pending | — |
 | `vibe` | Vibe | Pending | — |
 | `warp` | Warp | Pending | — |
-| `zcode` | ZCode | Pending | — |
 
-## Maintenance rule
+## Pending harnesses
 
-When the registry changes, recalculate active unique harnesses before adding documentation. Do not infer vendor configuration, file paths, or runtime behavior from registry identity notes; verify those claims against current official product documentation.
+14 harnesses remain undocumented: junie, kilocode, kimicode, mcode, mirror, pi, qwen-code, roocode, trueline-zcode, vibe, warp.
+
+## Adding a harness
+
+Documentation PRs should target `harnesses/<harness>-agent-harness/` with a README index (verification header, verdict legend, documentation map, quick reference, official sources), topic deep-dives, and a `corrections.md` log. Claims are graded against primary vendor documentation: ✅ TRUE, ⚠️ PARTIAL, ❌ FALSE, 💬 OPINION, ❓ UNVERIFIED.
