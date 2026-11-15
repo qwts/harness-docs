@@ -33,8 +33,8 @@ The commands reference lists more than forty slash commands. The load-bearing on
 
 | Group | Commands |
 |---|---|
-| Context | `/add`, `/drop`, `/ls`, `/read-only` (the conventions guide calls it `/read`), `/map`, `/map-refresh`, `/tokens`, `/clear`, `/reset`, `/paste`, `/copy-context`, `/context` (context mode for surrounding code) |
-| Editing flow | `/code`, `/ask`, `/architect`, `/help`, `/chat-mode`, `/ok` (alias for asking aider to proceed) |
+| Context | `/add`, `/drop`, `/ls`, `/read-only`, `/map`, `/map-refresh`, `/tokens`, `/clear`, `/reset`, `/paste`, `/copy-context`, `/context` (context mode for surrounding code) |
+| Editing flow | `/code`, `/ask`, `/architect`, `/help`, `/chat-mode`, `/ok` (added on `main` after v0.86.0; asks aider to proceed with the proposed changes) |
 | Git | `/diff`, `/undo`, `/commit`, `/git` |
 | Shell and repair | `/run` (alias `!`) runs a shell command and optionally shares output; `/test` runs the test command and shares output on non-zero exit; `/lint` lints and fixes in-chat or dirty files |
 | Models | `/model`, `/models`, `/editor-model`, `/weak-model`, `/reasoning-effort`, `/think-tokens` |

@@ -25,7 +25,7 @@ Aider is AI pair programming in your terminal. It is git-centric — edits are c
 
 - ❌ **“Aider supports MCP servers.”** No MCP integration appears anywhere in aider’s official documentation or README; its extension points are lint/test commands, `/run`, watch files, and an explicitly unsupported Python API.
 - ❌ **“Aider has subagents or agent teams.”** No subagent, agent-team, or orchestrator concept is documented; aider runs one model conversation against the files in the chat.
-- ❌ **“CONVENTIONS.md is picked up automatically.”** Conventions load only through `--read`, in-chat `/read`, or a `read:` entry in `.aider.conf.yml`.
+- ❌ **“CONVENTIONS.md is picked up automatically.”** Conventions load only through `--read`, in-chat `/read-only`, or a `read:` entry in `.aider.conf.yml`.
 - ❌ **“Aider sends your entire repository to the LLM.”** The repo map is a ranked summary under a token budget (1k tokens by default), not the tree.
 - ❌ **“Aider never commits without asking.”** In a git repo, auto-commits and dirty-commits are enabled by default; aider commits its edits and preexisting dirty changes.
 - ❌ **“Any provider’s API key can go in `.aider.conf.yml`.**” Only OpenAI and Anthropic keys are accepted in the YAML config; all providers’ keys belong in the `.env` file or environment.

@@ -10,7 +10,7 @@ Read-only files are part of the chat but not the edit surface. Files listed in `
 
 ## Conventions load only on request
 
-The documented way to give the model project conventions is a small markdown file loaded into the chat — the docs use `CONVENTIONS.md` with entries like “Prefer httpx over requests”. It is not discovered automatically. The docs recommend loading it with `/read CONVENTIONS.md` in-chat or `aider --read CONVENTIONS.md` at launch, which also marks it read-only and makes it cacheable when prompt caching is enabled. To load conventions every session, add a `read:` entry to `.aider.conf.yml`. A community conventions repository exists for sharing files.
+The documented way to give the model project conventions is a small markdown file loaded into the chat — the docs use `CONVENTIONS.md` with entries like “Prefer httpx over requests”. It is not discovered automatically. The recommended loading is `aider --read CONVENTIONS.md` at launch or the in-chat `/read-only CONVENTIONS.md` command, which marks the file read-only and makes it cacheable when prompt caching is enabled. (The conventions guide still spells the in-chat command `/read`; the current CLI implements only `/read-only`, so that spelling is outdated.) To load conventions every session, add a `read:` entry to `.aider.conf.yml`. A community conventions repository exists for sharing files.
 
 ## The repository map is a budgeted summary
 
