@@ -30,7 +30,7 @@
 | `devin` | Devin | **Documented** | [Index](devin-agent-harness/README.md) |
 | `factory-droid` | Factory Droid | **Documented** | [Index](factory-droid-agent-harness/README.md) |
 | `goose` | Goose | **Documented** | [Index](goose-agent-harness/README.md) |
-| `grok` | Grok | Pending | — |
+| `grok` | Grok | **Documented** | [Index](grok-agent-harness/README.md) |
 | `hermes` | Hermes | Pending | — |
 | `junie` | Junie | Pending | — |
 | `kilocode` | Kilo Code | Pending | — |
