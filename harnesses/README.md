@@ -33,7 +33,7 @@
 | `grok` | Grok | **Documented** | [Index](grok-agent-harness/README.md) |
 | `hermes` | Hermes | **Documented** | [Index](hermes-agent-harness/README.md) |
 | `junie` | Junie | **Documented** | [Index](junie-agent-harness/README.md) |
-| `kilocode` | Kilo Code | Pending | — |
+| `kilocode` | Kilo Code | **Documented** | [Index](kilocode-agent-harness/README.md) |
 | `kimicode` | Kimi Code | Pending | — |
 | `kiro` | Kiro | **Documented** | [Index](kiro-agent-harness/README.md) |
 | `mcode` | MCode | Pending | — |
