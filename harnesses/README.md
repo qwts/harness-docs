@@ -23,7 +23,7 @@
 | `claude-code` | Claude Code | **Documented** | [Index](claude-agent-harness/README.md) |
 | `cline` | Cline | **Documented** | [Index](cline-agent-harness/README.md) |
 | `codex` | OpenAI Codex | **Documented** | [Index](codex-agent-harness/README.md) |
-| `command-code` | Command Code | Pending | — |
+| `command-code` | Command Code | **Documented** | [Index](command-code-agent-harness/README.md) |
 | `copilot` | GitHub Copilot | **Documented** | [Index](copilot-agent-harness/README.md) |
 | `cursor` | Cursor | **Documented** | [Index](cursor-agent-harness/README.md) |
 | `deepseek` | DeepSeek | **Documented** | [Index](deepseek-agent-harness/README.md) |
