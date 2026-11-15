@@ -36,7 +36,7 @@ Provider entries need `baseURL` and `models`; `apiKey` accepts a `"$ENV_VAR"`, `
 
 ## Attribution and model routing
 
-Commits carry a default `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>` trailer; the `attribution` setting takes a custom single-line `Co-authored-by:` trailer (max 200 chars) or `""` to disable. `featureModels` routes side tasks (titleGeneration, compaction, tasteLearning, vision, subagents, planning/implementation lanes) to specific models; on a BYOK session model, “all the side tasks default to the session model … so nothing silently falls back to Command Code (or bills your plan) mid-session.”
+Commits carry a default `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>` trailer; the `attribution` object’s `commit` field takes a custom single-line `Co-authored-by:` trailer (max 200 chars; non-co-author lines are ignored) or `""` to disable. `featureModels` routes side tasks (titleGeneration, compaction, tasteLearning, vision, subagents, planning/implementation lanes) to specific models; on a BYOK session model, “all the side tasks default to the session model … so nothing silently falls back to Command Code (or bills your plan) mid-session.”
 
 ## Official sources
 

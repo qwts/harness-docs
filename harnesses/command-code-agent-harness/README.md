@@ -51,7 +51,7 @@ Command Code (package `command-code`, binary `cmd`; `cmdc` on Windows where `cmd
 | Sessions | `~/.commandcode/projects/<slug>/<id>.jsonl` — append-only tree; per-turn commit |
 | Checkpoints | one per prompt; kept 30 days, 200 backups/session, 10 MB/file cap |
 | Subagents | Markdown files in `.commandcode/agents/` (project) and `~/.commandcode/agents/` (personal); first name wins; cannot spawn subagents |
-| Default attribution | `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>`; `attribution: ""` disables |
+| Default attribution | `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>`; `attribution.commit: ""` disables |
 | BYOK | `~/.commandcode/providers.json` only (user-level); `/connect` or by hand; keys in `auth.json` |
 | Local-only mode | `cmd --local-only`, `CMD_LOCAL_ONLY=1`, or `"localOnly": true` — no telemetry, no billing reads, no `/share` |
 
