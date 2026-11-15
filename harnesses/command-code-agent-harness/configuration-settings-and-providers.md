@@ -8,12 +8,12 @@ Configuration is JSON under `~/.commandcode/` (home resolved from `HOME`/`USERPR
 
 | File | Purpose |
 |---|---|
-| `config.json  | Preferences: `provider`, `model`, `theme`, `compactMode`, `reasoningEffort`, `featureModels`, `tasteLearning`, `artifactsEnabled`, machine-written `installed`/`firstMessageSent` |
+| `config.json` | Preferences: `provider`, `model`, `theme`, `compactMode`, `reasoningEffort`, `featureModels`, `tasteLearning`, `artifactsEnabled`, machine-written `installed`/`firstMessageSent` |
 | `settings.json` | “hooks, permissions, MCP” plus `model`, `providers`, `skills`, `mods`, `disabledSkills`, `subagentMaxTurns`, `attribution`, `disableSkillShellExecution`, `disableScratchpad` |
-| `auth.json  | Credentials, “written 0600”, “don’t edit”; never sent to third parties |
+| `auth.json` | Credentials, “written 0600”, “don’t edit”; never sent to third parties |
 | `providers.json` | Custom BYOK providers |
 | `keybindings.json` | Key overrides; `/reload` applies mid-session |
-| `mcp.json  | User-scope MCP servers |
+| `mcp.json` | User-scope MCP servers |
 | `cron/jobs.json` | Scheduled jobs (“managed”) |
 | `projects/{project}/config.json` | Machine-written per-project state (taste onboarding flags) |
 | `projects/{project}/mcp.json` | Local MCP servers |
@@ -36,7 +36,7 @@ Provider entries need `baseURL` and `models`; `apiKey` accepts a `"$ENV_VAR"`, `
 
 ## Attribution and model routing
 
-Commits carry a default `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>` trailer; the `attribution  setting takes a custom single-line `Co-authored-by:` trailer (max 200 chars) or `""` to disable. `featureModels` routes side tasks (titleGeneration, compaction, tasteLearning, vision, subagents, planning/implementation lanes) to specific models; on a BYOK session model, “all the side tasks default to the session model … so nothing silently falls back to Command Code (or bills your plan) mid-session.”
+Commits carry a default `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>` trailer; the `attribution` setting takes a custom single-line `Co-authored-by:` trailer (max 200 chars) or `""` to disable. `featureModels` routes side tasks (titleGeneration, compaction, tasteLearning, vision, subagents, planning/implementation lanes) to specific models; on a BYOK session model, “all the side tasks default to the session model … so nothing silently falls back to Command Code (or bills your plan) mid-session.”
 
 ## Official sources
 

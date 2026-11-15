@@ -24,37 +24,36 @@ Command Code (package `command-code`, binary `cmd`; `cmdc` on Windows where `cmd
 
 ## Top corrections
 
-- ❌ **“Configuration lives in `~/.config/command-code/`.”** The config root is `~/.commandcode/`; project files are `.commandcode/` in the repo and `.mcp.json at the root.
+- ❌ **“Configuration lives in `~/.config/command-code/`.”** The config root is `~/.commandcode/`; project files are `.commandcode/` in the repo and `.mcp.json` at the root.
 - ❌ **“A project allow rule overrides a user-global deny.”** Rule lists union across scopes and “deny wins, then ask, then allow” — specificity does not reorder anything.
 - ❌ **“`--permission-mode yolo` is enough for headless runs that write files.”** Headless mode blocks writes unless `--yolo`/`--dangerously-skip-permissions` is passed; the mode flag alone “does not lift that block.”
-
 - ❌ **“taste-1 is an LLM that sends your code to the cloud.”** The docs state it “is not an LLM”; taste is local markdown, and taste learning “runs locally and stores preferences as structured rules — not code snippets.”
 - ❌ **“Command Code reads `CLAUDE.md`.”** It “reads AGENTS.md, not CLAUDE.md”; `/import` migrates other agents’ files.
-- ❌ **“PostToolUse hooks can undo a tool call.”** a PostToolUse `decision: "block"` is an advisory retry signal — “the tool already ran, so nothing is un-done.”
+- ❌ **“PostToolUse hooks can undo a tool call.”** A PostToolUse `decision: "block"` is an advisory retry signal — “the tool already ran, so nothing is un-done.”
 - ❌ **“Mods run sandboxed.”** The docs are explicit: “There is no sandbox. A mod is code that runs with your permissions.”
-- ⚠️ **“Command Code is fully Claude Code-compatible.”** Permission-mode aliases, `CLADE_*` skill placeholders, and `.agents/skills/` paths are honored — but config root, memory file, and skill roots differ.
+- ⚠️ **“Command Code is fully Claude Code-compatible.”** Permission-mode aliases, `CLAUDE_*` skill placeholders, and `.agents/skills/` paths are honored — but config root, memory file, and skill roots differ.
 
 ## Quick reference
 
 | Concern | Verified location or behavior |
 |---|---|
 | Config root | `~/.commandcode/` (JSON files; nothing created on launch) |
-| User files | `config.json` (preferences), `settings.json` (hooks/permissions/MCP), `auth.json` (0600, don’edit), `providers.json` (BYOK), `keybindings.json`, `mcp.json`, `cron/jobs.json` |
-| Project files | `.commandcode/settings.json` (commit), `.commandcode/settings.local.json` (gitignore), `.mcp.json (commit) |
-| Settings precedence | project `settings.local.json` → project `settings.json` → user `settings.json` ↲ `config.json` (legacy fields); maps deep-merge, scalars overwrite, permission lists **union** |
+| User files | `config.json` (preferences), `settings.json` (hooks/permissions/MCP), `auth.json` (0600, don’t edit), `providers.json` (BYOK), `keybindings.json`, `mcp.json`, `cron/jobs.json` |
+| Project files | `.commandcode/settings.json` (commit), `.commandcode/settings.local.json` (gitignore), `.mcp.json` (commit) |
+| Settings precedence | project `settings.local.json` → project `settings.json` → user `settings.json` → `config.json` (legacy fields); maps deep-merge, scalars overwrite, permission lists **union** |
 | Permission modes | `default`, `accept-edits`, `plan`, `yolo`, `dont-ask`; shift+tab cycles the first four |
 | Rule order | “deny wins, then ask, then allow”; lists accumulate across scopes |
 | Headless | `cmd -p "query"`; writes blocked without `--yolo`; `--max-turns` default 100, exit code 8 on cap |
 | MCP scopes | local `~/.commandcode/projects/<slug>/mcp.json` > project `.mcp.json` > user `~/.commandcode/mcp.json` |
 | MCP tool names | `mcp__<server>__<tool>` |
-| Memory | `AGENTS.md` tiers (user ↲ project ↲ subdir), `@path` imports recursive to 5 levels; “reads AGENTS.md, not CLAUDE.md” |
+| Memory | `AGENTS.md` tiers (user → project → subdir), `@path` imports recursive to 5 levels; “reads AGENTS.md, not CLAUDE.md” |
 | Taste storage | `.commandcode/taste/` (project), `~/.commandcode/taste/` (global), `commandcode.ai/username/taste` (remote, opt-in push/pull) |
 | Sessions | `~/.commandcode/projects/<slug>/<id>.jsonl` — append-only tree; per-turn commit |
 | Checkpoints | one per prompt; kept 30 days, 200 backups/session, 10 MB/file cap |
 | Subagents | Markdown files in `.commandcode/agents/` (project) and `~/.commandcode/agents/` (personal); first name wins; cannot spawn subagents |
 | Default attribution | `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>`; `attribution: ""` disables |
 | BYOK | `~/.commandcode/providers.json` only (user-level); `/connect` or by hand; keys in `auth.json` |
-| Local-only mode | `cmd --local-only`, `CMD_LOCAL_ONLY=1`, or `"localOnly": true` — no telemetry, no billing reads, no /share |
+| Local-only mode | `cmd --local-only`, `CMD_LOCAL_ONLY=1`, or `"localOnly": true` — no telemetry, no billing reads, no `/share` |
 
 ## Official sources
 

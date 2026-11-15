@@ -22,14 +22,14 @@
 | Memory tiers replace each other; only the nearest file loads. | ❌ FALSE | “Every one that exists is loaded; they add up, they don’t replace each other” — user, then project (first of AGENTS.md/.commandcode/AGENTS.md), then subdirectory files on demand. |
 | Compaction rewrites the session transcript. | ❌ FALSE | Sessions are “a single append-only JSONL file” whose entries form a tree; compaction appends an entry — “The on-disk log is never rewritten.” |
 | Checkpoints are kept forever. | ❌ FALSE | “Checkpoints are kept for 30 days, capped at 200 backups per session,” with file backups “capped at 10MB per file.” |
-| `--continue` can resume sessions from other directories. | ❌ FALSE | The catalog is project-scoped: “`/resume` and `--continue` only ever see sessions from the directory you launched Command Code in” |
+| `--continue` can resume sessions from other directories. | ❌ FALSE | The catalog is project-scoped: “`/resume` and `--continue` only ever see sessions from the directory you launched Command Code in.” |
 | Subagents can spawn their own subagents. | ❌ FALSE | “Subagents can’t start their own subagents - the agent tool is removed from their tool set.” |
-| Agents can be named `explore`, `plan`, `review`, or `general`.`| ❌ FALSE | Those are reserved names; “files using them are ignored.” |
-| Subagents run unlimited turns. | ❌ FALSE | `maxTurns` defaults to `subagentMaxTurns` (else 200), range 1–1000; headless `--max-turns` defaults to 100 and “exits with code 8 if the cap is hit”. |
+| Agents can be named `explore`, `plan`, `review`, or `general`. | ❌ FALSE | Those are reserved names; “files using them are ignored.” |
+| Subagents run unlimited turns. | ❌ FALSE | `maxTurns` defaults to `subagentMaxTurns` (else 200), range 1–1000; headless `--max-turns` defaults to 100 and “exits with code 8 if the cap is hit.” |
 | Skills always execute their inline shell commands. | ❌ FALSE | `disableSkillShellExecution: true` stops it — “so opening a skill never shells out” — replacing every placeholder with “[shell command execution disabled by policy].” |
 | Command Code discovers `.claude/skills/` directories. | ❌ FALSE | The documented roots are `.commandcode/skills/`, `.agents/skills/`, `~/.commandcode/skills/`, and `~/.agents/skills/` (plus settings paths); no `.claude/` root is documented. |
 | Project MCP servers override local ones. | ❌ FALSE | “When the same server name exists in multiple scopes, local overrides project, which overrides user.” |
-| Mods run in a sandbox. | ❌ FALSE | “There is no sandbox. A mod is code that runs with your permissions.” — the ModApi is also marked Experimental. |
+| Mods run in a sandbox. | ❌ FALSE | “There is no sandbox. A mod is code that runs with your permissions” — the ModApi is also marked Experimental. |
 | Mods can silently answer the permission prompt. | ❌ FALSE | Mods can answer `onPermissionRequest`, but “the permission prompt (and every other approval dialog) is not on the list and never will be.” |
 | The desktop app has CLI feature parity. | ❌ FALSE | Desktop lacks headless mode, `/share`, scheduled tasks, start-up flags, subcommands, the `dont-ask` mode, and several slash commands; `/config`, `/theme`, and `/mcp` map to Settings pages. |
 | Desktop commits include only the agent’s changes. | ❌ FALSE | “A commit includes all current project changes, not only changes made by the agent.” |
