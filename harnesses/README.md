@@ -40,7 +40,7 @@
 | `mirror` | Mirror | **Documented** | [Index](mirror-agent-harness/README.md) |
 | `muse` | Meta Muse Code | **Documented** | [Index](muse-agent-harness/README.md) |
 | `opencode` | OpenCode | **Documented** | [Index](opencode-agent-harness/README.md) |
-| `pi` | Pi | Pending | — |
+| `pi` | Pi | **Documented** | [Index](pi-agent-harness/README.md) |
 | `qwen-code` | Qwen Code | Pending | — |
 | `roocode` | Roo Code | Pending | — |
 | `vibe` | Vibe | Pending | — |
