@@ -44,7 +44,7 @@
 | `qwen-code` | Qwen Code | **Documented** | [Index](qwen-code-agent-harness/README.md) |
 | `roocode` | Roo Code | **Documented** | [Index](roocode-agent-harness/README.md) |
 | `vibe` | Vibe | **Documented** | [Index](vibe-agent-harness/README.md) |
-| `warp` | Warp | Pending | — |
+| `warp` | Warp | **Documented** | [Index](warp-agent-harness/README.md) |
 | `zcode` | ZCode | Pending | — |
 
 ## Maintenance rule
