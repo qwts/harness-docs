@@ -36,7 +36,7 @@
 | `kilocode` | Kilo Code | **Documented** | [Index](kilocode-agent-harness/README.md) |
 | `kimicode` | Kimi Code | **Documented** | [Index](kimicode-agent-harness/README.md) |
 | `kiro` | Kiro | **Documented** | [Index](kiro-agent-harness/README.md) |
-| `mcode` | MCode | Pending | — |
+| `mcode` | MCode | **Documented** | [Index](mcode-agent-harness/README.md) |
 | `mirror` | Mirror | Pending | — |
 | `muse` | Meta Muse Code | **Documented** | [Index](muse-agent-harness/README.md) |
 | `opencode` | OpenCode | **Documented** | [Index](opencode-agent-harness/README.md) |
