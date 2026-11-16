@@ -43,7 +43,7 @@
 | `pi` | Pi | **Documented** | [Index](pi-agent-harness/README.md) |
 | `qwen-code` | Qwen Code | **Documented** | [Index](qwen-code-agent-harness/README.md) |
 | `roocode` | Roo Code | **Documented** | [Index](roocode-agent-harness/README.md) |
-| `vibe` | Vibe | Pending | — |
+| `vibe` | Vibe | **Documented** | [Index](vibe-agent-harness/README.md) |
 | `warp` | Warp | Pending | — |
 | `zcode` | ZCode | Pending | — |
 
