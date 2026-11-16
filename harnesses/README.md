@@ -41,7 +41,7 @@
 | `muse` | Meta Muse Code | **Documented** | [Index](muse-agent-harness/README.md) |
 | `opencode` | OpenCode | **Documented** | [Index](opencode-agent-harness/README.md) |
 | `pi` | Pi | **Documented** | [Index](pi-agent-harness/README.md) |
-| `qwen-code` | Qwen Code | Pending | — |
+| `qwen-code` | Qwen Code | **Documented** | [Index](qwen-code-agent-harness/README.md) |
 | `roocode` | Roo Code | Pending | — |
 | `vibe` | Vibe | Pending | — |
 | `warp` | Warp | Pending | — |
