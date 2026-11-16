@@ -45,7 +45,7 @@
 | `roocode` | Roo Code | **Documented** | [Index](roocode-agent-harness/README.md) |
 | `vibe` | Vibe | **Documented** | [Index](vibe-agent-harness/README.md) |
 | `warp` | Warp | **Documented** | [Index](warp-agent-harness/README.md) |
-| `zcode` | ZCode | Pending | — |
+| `zcode` | ZCode | **Documented** | [Index](zcode-agent-harness/README.md) |
 
 ## Maintenance rule
 
