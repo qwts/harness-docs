@@ -23,7 +23,7 @@ Version anchors: latest download **v3.18.2** (2026-11-13: voice input, Worktree 
 
 1. **“ZCode is just a GLM chat wrapper.”** ❌ “ZCode is a new Agentic Development Environment (ADE)” with a first-party Agent, workspace/task management, terminal, Git, live browser preview, and automations.
 2. **“ZCode reads your terminal's GLM environment variables.”** ❌ “Terminal environment variables and the ZCode desktop model setup are separate entry points, so configuration is not synced automatically”; it also “does not read HTTP_PROXY or similar environment variables.”
-3. **“ZCode ships a CLI or headless mode.”** ❌ Only the desktop app is documented; tasks “run on your machine, so nothing triggers while it's asleep or the app is closed,” and Remote/Bot are control surfaces, “never creating a runtime of its own.”
+3. **“ZCode ships a CLI or headless mode.”** ❌ Only the desktop app is documented; tasks “run on your machine, so nothing triggers while it's asleep or the app is closed,” and Remote/Bot are control surfaces that “never creates a runtime of its own”.
 4. **“Project-level hooks run.”** ❌ “Project-level hooks are not executed in the current version … ignored as a whole — regardless of hooks.enabled — and logged as `config_project_hooks_ignored`.”
 5. **“CLAUDE.md is read continuously.”** ❌ “CLAUDE.md is not continuously read by ZCode Agent at runtime” — onboarding migration source only.
 6. **“Nested AGENTS.md files merge.”** ❌ “It does not merge multiple AGENTS.md files across directory levels. It also does not scan child directories, expand @import / @include.”
