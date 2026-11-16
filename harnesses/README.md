@@ -42,7 +42,7 @@
 | `opencode` | OpenCode | **Documented** | [Index](opencode-agent-harness/README.md) |
 | `pi` | Pi | **Documented** | [Index](pi-agent-harness/README.md) |
 | `qwen-code` | Qwen Code | **Documented** | [Index](qwen-code-agent-harness/README.md) |
-| `roocode` | Roo Code | Pending | — |
+| `roocode` | Roo Code | **Documented** | [Index](roocode-agent-harness/README.md) |
 | `vibe` | Vibe | Pending | — |
 | `warp` | Warp | Pending | — |
 | `zcode` | ZCode | Pending | — |
