@@ -33,7 +33,7 @@ Temporary trust: “The `vibe --trust` flag trusts the working directory for the
 
 ## Per-tool permissions
 
-`[tools.<name>]` with `permission = "always" | "ask" | "never"` applies to “built-in tools (`read_file`, `write_file`, `edit`, `bash`, etc.) as well as MCP tools and connector tools.” Toggling: `enabled_tools` / `disabled_tools` accept “exact names, globs, or regex patterns.” **Bash command lists**: “Some read-only commands (`ls`, `pwd`, `cat`, `git status`, etc.) are auto-allowed by default. Set `allowlist` and `denylist` to choose the commands Vibe always runs or always blocks. Each setting replaces its default list.”
+`[tools.<name>]` with `permission = "always" | "ask" | "never"` applies to “built-in tools (`read_file`, `write_file`, `edit`, `bash`, etc.) as well as MCP tools and connector tools.” Toggling: `enabled_tools` / `disabled_tools` accept “exact names, globs, or regex patterns”; `disabled_tools` is “applied after `enabled_tools`”, whereas `disabled_skills` is “applied when `enabled_skills` is empty”. **Bash command lists**: “Some read-only commands (`ls`, `pwd`, `cat`, `git status`, etc.) are auto-allowed by default. Set `allowlist` and `denylist` to choose the commands Vibe always runs or always blocks. Each setting replaces its default list.”
 
 **Outside the working directory**: `outside_workdir = "ask"` (default) or `"deny"` — “the agent gets an error and keeps working” — settable globally or per tool. Boundary caveat: “Shell tools only check paths written in the command, not paths a script builds, so keep a shell tool that must stay inside the working directory on `ask`.” **MCP tools** are addressed “as `{server_name}_{tool_name}`” (e.g. `[tools.fetch_server_get]`).
 
